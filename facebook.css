@@ -1,0 +1,68 @@
+body{
+    background-color: #E9EBEE;
+}
+
+#container{
+    max-width: 500px;
+    margin-top: 50px;
+    margin-left: 650px;
+}
+
+img{
+    vertical-align: top;
+}
+
+.col{
+    width: 495px;
+    padding: 0px;
+}
+
+#fbPost{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#fbText, #fbImg, #fbVideo{
+    background-color: white;
+    margin: 10px;
+    margin-left: 0px;
+}
+
+p{
+    margin: 10px;
+    font-size: 15px;
+}
+
+#more{
+    color: blue;
+}
+
+#more:hover {
+	text-decoration-line: underline;
+}
+
+video{
+    padding: 0px;
+    margin: 0px;
+}
+
+#fbBar{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+}
+
+#fbMenu{
+    position: fixed;
+    left: 440px;
+    top: 50px;
+    height: "100%";
+}
+
+#fbSide{
+    position: fixed;
+    left: 1150px;
+    top: 50px;
+    height: "100%";
+}

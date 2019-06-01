@@ -1,0 +1,26 @@
+body{
+    background-color: #1E1E1E;
+}
+
+#open{
+    width: 17%;
+}
+
+#fileDiv{
+    width: 80%;
+}
+
+#text{
+    background-color: #1E1E1E;
+    margin: 0px;
+    margin-left: 50px;
+    padding: 0px;
+    font-size: 12px;
+}
+
+textarea {
+    border: 0px;
+    color: white;
+    outline: none;
+    overflow: hidden;
+}

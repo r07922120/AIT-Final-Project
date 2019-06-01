@@ -1,0 +1,22 @@
+#word{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    width: 100%;
+}
+
+body{
+    background-color: #E6E6E6;
+    max-width: 1000px;
+    margin: auto;
+}
+
+img{
+    width: 24%;
+    margin-bottom: 10px;
+}
+
+#page1, #page2, #page3, #page4{
+    margin-top: 170px;
+}

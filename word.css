@@ -1,0 +1,21 @@
+#word{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+}
+
+body{
+    background-color: #E6E6E6;
+    max-width: 800px;
+    margin: auto;
+}
+
+img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#page1{
+    margin-top: 170px;
+}
