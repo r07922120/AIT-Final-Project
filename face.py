@@ -15,22 +15,21 @@ def faceDetection(img, previousX, previousY, previousW, previousH):
 	
 	faces = face_cascade.detectMultiScale(gray, 1.1, 3)#face detect
 	
-
-	for (x,y,w,h) in faces:
-		IOUBecomeBig = False
-		roi_gray = gray[y:y+h, x:x+w]
-		#roi_color = img[y:y+h, x:x+w]
-		eyes = eye_cascade.detectMultiScale(roi_gray)
-		IOU = iou(x, y, w, h, previousX, previousY, previousW, previousH)
-		if(IOU > maxIOU):
-			maxIOU = IOU
-			IOUBecomeBig = True
-
-		if(len(eyes) > maxEyes):
-			face = (x, y, w, h)
-			maxEyes = len(eyes)
-		elif(len(eyes) == maxEyes and IOUBecomeBig):
-			face = (x, y, w, h)
+	if(previousX == 0 and previousY == 0 and previousW == 0 and previousH == 0):
+		for (x,y,w,h) in faces:
+			roi_gray = gray[y:y+h, x:x+w]
+			#roi_color = img[y:y+h, x:x+w]
+			eyes = eye_cascade.detectMultiScale(roi_gray)
+			if(len(eyes) > maxEyes):
+				face = (x, y, w, h)
+				maxEyes = len(eyes)
+	else:
+		for (x,y,w,h) in faces:			
+			IOU = iou(x, y, w, h, previousX, previousY, previousW, previousH)
+			if(IOU > maxIOU):
+				maxIOU = IOU
+				face = (x, y, w, h)
+				maxIOU = IOU
 		#cv2.rectangle(img,(x, y),(x + w,y + h), (255,0,0),2)
 		#for (ex,ey,ew,eh) in eyes:
 		#	cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
