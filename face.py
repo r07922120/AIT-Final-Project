@@ -39,10 +39,10 @@ def faceDetection(img, previousX, previousY, previousW, previousH):
 
 def iou(x1, y1, w1, h1, x2, y2, w2, h2):
 	# computing area of each rectangles
-	predx0 = x1 - w1 / 2
-	predy0 = y1 - h1 / 2
-	predx1 = x1 + w1 / 2 
-	predy1 = y1 + h1 / 2
+	predx0 = x1
+	predy0 = y1
+	predx1 = x1 + w1
+	predy1 = y1 + h1
 	targetx0 = x2
 	targety0 = y2
 	targetx1 = x2 + w2
