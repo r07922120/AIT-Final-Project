@@ -23,5 +23,8 @@ function distance(event) {
         }
         size = size + "px";
         document.getElementById("word").style.fontSize = size; 
+    }else if(event.keyCode == 13){
+        fontSize = document.getElementById("word").style.fontSize
+        console.log(fontSize)
     }
 }
