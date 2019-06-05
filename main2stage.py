@@ -12,7 +12,7 @@ def main():
 	faceInit = []
 	initFrames = 5
 	nearRatio = 1.66
-	farRatio = 0.66
+	farRatio = 1.5
 	start = False
 	state = 0#face distance state
 	previousX = 0
@@ -65,15 +65,20 @@ def main():
 if __name__ == "__main__":
 	
 	fp = open("output.txt", "w")	
-	preState = 1
+	preState = 0
 	fp.write(str(preState))
 	fp.close()
 	print(preState)
 	for state in main():
-		if(state == 1 or state == 0):
+		if(preState == 1 and state == 0):
+			state = 1
+		elif(preState == 0 and state == 0):
+			state = 0
+		elif(state == 1):
 			state = 1
 		elif(state == -1):
 			state = 0
+
 		if(preState != state):
 			preState = state
 			fp = open("output.txt", "w")
