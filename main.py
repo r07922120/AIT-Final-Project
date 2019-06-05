@@ -49,6 +49,10 @@ def main():
 			
 			yield state
 		else:
+			previousX = 0
+			previousY = 0
+			previousW = 0
+			previousH = 0
 			yield state
 
 		k = cv2.waitKey(20) & 0xFF
@@ -62,6 +66,7 @@ if __name__ == "__main__":
 	
 	fp = open("output.txt", "w")	
 	preState = 0
+	realState = 0
 	fp.write(str(preState))
 	fp.close()
 	print(preState)
@@ -69,9 +74,13 @@ if __name__ == "__main__":
 		if(state != preState and abs(preState - state) != 2):#prevent detect error
 			fp = open("output.txt", "w")
 			preState = state
-			if(state == -1):
-				state = 0
-			fp.write(str(state))
+			if(state == 1):
+				realState = 1
+			elif(state == 0):
+				realState = realState
+			else:
+				realState = 0
+			fp.write(str(realState))
 			fp.close()
-			print(state)
+			print(realState)
 	
