@@ -1,6 +1,25 @@
 var video = $("video").get(0);
 var preText = 0;
 
+document.addEventListener('keydown', distance);
+function distance(event) {
+    if(event.keyCode == 107){
+        console.log('far');
+
+        // if(!video.paused){
+        video.requestFullscreen();
+        // }
+
+    }else if(event.keyCode == 109){
+        console.log('near');
+
+        if (document.fullscreen) {
+            // console.log('full')
+            document.exitFullscreen();
+        }
+    }
+}
+
 function readTextFile()
 {
     var rawFile = new XMLHttpRequest();
@@ -27,9 +46,9 @@ function readTextFile()
                     }else if(event.keyCode == 70 || allText == 1){
                         console.log('far');
                 
-                        if(!video.paused){
-                            video.requestFullscreen();
-                        }
+                        // if(!video.paused){
+                        video.requestFullscreen();
+                        // }
                     }
                 }
             }

@@ -5,7 +5,7 @@ var open = document.getElementById('open');
 var file = document.getElementById('file');
 var fileDiv = document.getElementById('fileDiv');
 var isOpen = false;
-var preText = 1;
+var preText = 0;
 
 function clickMenu(){
     console.log('clickMenu')
@@ -38,7 +38,7 @@ function readTextFile()
                     if(allText == 0){
                         console.log('near');
                 
-                        $("#text").css("font-size", "14px");
+                        $("#text").css("font-size", "18px");
                 
                         if(isOpen){
                             $("#open").css("width", "17%");

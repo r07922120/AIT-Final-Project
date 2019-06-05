@@ -12,7 +12,7 @@ def main():
 	faceInit = []
 	initFrames = 5
 	nearRatio = 1.66
-	farRatio = 1.5
+	farRatio = 1.46
 	start = False
 	state = 0#face distance state
 	previousX = 0
