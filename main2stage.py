@@ -70,12 +70,14 @@ if __name__ == "__main__":
 	fp.close()
 	print(preState)
 	for state in main():
-		fp = open("output.txt", "w")
 		if(state == 1 or state == 0):
-			preState = 1
+			state = 1
 		elif(state == -1):
-			preState = 0
-		fp.write(str(preState))
-		fp.close()
-		print(preState)
+			state = 0
+		if(preState != state):
+			preState = state
+			fp = open("output.txt", "w")
+			fp.write(str(preState))
+			fp.close()
+			print(preState)
 	
